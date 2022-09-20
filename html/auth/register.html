@@ -1,0 +1,81 @@
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex img-register">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <div class="card-img text-center mb-4">
+              <img class="img-fluid" style="max-width: 200px;"
+               src="https://img5.thuthuatphanmem.vn/uploads/2022/01/16/logo-fpt-fpt-polytechnic-tach-nen_043151201.png" alt="">
+
+            </div>
+            <h5 class="card-title fw-light mb-3 text-muted">Đăng ký tài khoản</h5>
+            <form name="registerForm" class="needs-validation" novalidate> 
+              <div class="form-floating mb-3 has-validation">
+                <input ng-model="user.username" ng-change="checkExistUsername();" ng-minlength="3" ng-max-length="20"
+                 type="text" name="un"
+                class="form-control {{(registerForm.un.$untouched && !registerForm.un.$dirty)? '' : registerForm.un.$invalid? 'is-invalid':'is-valid'}}" id="username" placeholder=" " required>
+                <label class="text-muted fw-light" for="username">Username</label>
+                  <div class="invalid-feedback">{{usernameExists? 'Username đã tồn tại trong hệ thống' : 'Nhập username từ 3 đến 20 kí tự.'}}</div>
+              </div>
+              <div class="form-floating mb-3 has-validation">
+                <input ng-change="checkExistEmail();" ng-model="user.email" ng-minlength="3" type="email" name="email"
+                class="form-control {{(registerForm.email.$untouched && !registerForm.email.$dirty)? '' : registerForm.email.$invalid? 'is-invalid':'is-valid'}}"
+                id="email" placeholder="abc@fpt.edu.vn" required>
+                <label class="text-muted fw-light" for="email">Email</label>
+                <div class="invalid-feedback">{{emailExists? 'Email đã tồn tại trong hệ thống.' : 'Nhập email hợp lệ.'}}</div>
+              </div>
+
+              <div class="form-floating mb-3 has-validation">
+                <input ng-model="user.password" ng-minlength="6" ng-pattern="/^[a-zA-Z0-9-]*$/"
+                type="password" name="pw"
+                class="form-control {{(registerForm.pw.$untouched && !registerForm.pw.$dirty)? '' : registerForm.pw.$invalid? 'is-invalid':'is-valid'}}"
+                id="password" placeholder=" " required>
+                <label class="text-muted fw-light" for="password">Nhập mật khẩu mới</label>
+                <div class="invalid-feedback">Nhập A-z, 0-9, '-' và từ 6 kí tự trở lên.</div>
+              </div>
+  
+              <div class="form-floating mb-3 mt-4 has-validation">
+                <input ng-model="verify" ng-minlength="6" ng-pattern="/^[a-zA-Z0-9-]*$/"
+                type="password" name="verify"
+                class="form-control {{(registerForm.verify.$untouched && !registerForm.verify.$dirty)? '' : registerForm.verify.$invalid || (user.password != verify)? 'is-invalid' : 'is-valid'}}"
+                id="verify" placeholder=" " required>
+                <label class="text-muted fw-light" for="verify">Xác nhận mật khẩu</label>
+                <div class="invalid-feedback">
+                  {{
+                    (user.password != verify)? 'Xác nhận mật khẩu không trùng khớp.'
+                                  : 'Nhập A-z, 0-9, "-" và từ 6 kí tự trở lên.'
+                  }}
+  
+                </div>
+              </div>
+
+
+              <a href="#!login" class="small text-center d-block">Đã có tài khoản?</a>
+              <hr class="my-4">
+              <div class="d-grid mb-2">
+                <button ng-click="add();" ng-disabled="registerForm.$pristine || registerForm.$invalid"
+                 class="btn btn-lg btn-success btn-login fw-bold text-uppercase" type="submit">đăng ký</button>
+              </div>
+
+              <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fab fa-google me-2"></i> Đăng ký Google
+                </button>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fab fa-facebook-f me-2"></i> Đăng ký Facebook
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

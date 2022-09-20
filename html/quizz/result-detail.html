@@ -1,0 +1,24 @@
+ <div class="card-body row d-flex flex-row-reverse">
+    <div class="mt-3 p-4  border border-bottom-0 border-top-0 shadow  border-{{q.answer == q.AnswerId? 'success':'danger'}}" ng-repeat="q in list">
+      <h5 class="card-titletext-start">{{$index + 1}}. {{q.Text}}</h5>
+      <form action="" class="">
+        <ul class="list-group">
+          <li class="list-group-item border border-0 d-flex align-items-center" ng-repeat="ans in q.Answers">
+            <div class="text-start">
+              <input ng-change="changeProgress(q);" disabled
+                class="form-check-input" type="radio" name="{{q.Id}}" id="{{ans.Id}}" value="{{ans.Id}}"
+                ng-model="q.answer">
+              <label class="form-check-label mx-2 d-inline" for="{{ans.Id}}" style="opacity: 100%;">
+                {{ans.Text}}
+              </label>
+            </div>
+            <div class="">
+              <span ng-if="q.AnswerId == ans.Id" class="quizz-result"><i
+                  class="bi bi-check2-circle text-success fw-bolder fs-5"></i></span>
+              <span ng-if="q.AnswerId != q.answer && q.answer == ans.Id" class="quizz-result"><i
+                  class="bi bi-x-circle text-danger fw-bolder fs-5"></i></span>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div> 

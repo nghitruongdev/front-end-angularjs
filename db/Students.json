@@ -1,0 +1,42 @@
+﻿[
+    {
+        "username": "nghitvps19009",
+        "password": "illbefine",
+        "fullName": "Trương Vĩnh Nghi",
+        "email": "nghitvps19009@fpt.edu.vn",
+        "gender": "true",
+        "birthday": "1999-10-24",
+        "schoolFee": "5400000",
+        "marks": "10"
+        },
+        {
+        "username": "dinhtps18992",
+        "password": "nevergiveup",
+        "fullName": "Trần Đình",
+        "email": "dinhtps18992@fpt.edu.vn",
+        "gender": "true",
+        "birthday": "2005-03-15",
+        "schoolFee": "5400000",
+        "marks": "9"
+        },
+        {
+        "username": "haonxps18956",
+        "password": "illalwayshereforyou",
+        "fullName": "Nguyễn Xuân Hảo",
+        "email": "haonxps18956@fpt.edu.vn",
+        "gender": "true",
+        "birthday": "2002-04-20",
+        "schoolFee": "5400000",
+        "marks": "10"
+        },
+        {
+        "username": "bienvdps18934",
+        "password": "idontknow",
+        "fullName": "Vũ Đình Biên",
+        "email": "bienvdps18934@fpt.edu.vn",
+        "gender": "true",
+        "birthday": "2001-05-15",
+        "schoolFee": "5400000",
+        "marks": "8.5"
+        }
+]

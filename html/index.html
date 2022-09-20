@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ - FPT Polytechnic</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/34cc1d8757.js" crossorigin="anonymous"></script>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+  <!-- Css -->
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- JS Files -->
+  <script src="../js/index.js"></script>
+  <script src="../js/login.js"></script>
+  <script src="../js/course-controller.js"></script>
+  <script src="../js/quizz-controller.js"></script>
+  <script src="../js/result-controller.js"></script>
+  <script src="../js/update-password-controller.js"></script>
+  <script src="../js/update-profile-controller.js"></script>
+</head>
+<body>
+  <div class="container" ng-controller="IndexController">
+
+    <!-- navbar -->
+    <header  class=" p-3 mb-1 sticky-top bg-white bg-opacity-100" id="main-nav-bar">
+      <div class="" ng-include="'./layout/header.html'"></div>
+      <!-- <div class=""><button class="btn btn-outline-secondary rounded-circle fs-6"><i class="bi bi-three-dots"></i></button></div> -->
+    </header>
+    <!-- Carousel -->
+    <!-- <div class="" ng-include="'others/carousel.html'"></div> -->
+    <!-- main -->
+    <main ng-view
+     class="row" style="min-height:550px;">
+      <!-- article  -->
+
+      <!-- aside -->
+      <!-- <aside ng-include="'./layout/aside-index.html'"
+      class="col d-md-block ">
+      </aside> -->
+    </main>
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button> -->
+
+<div class=" offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-uppercase lead fw-light fs-3" id="offcanvasWithBothOptionsLabel">danh sách môn học</h5>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+  </div>
+  <div class="offcanvas-body">
+    <div class="" ng-include="'./layout/aside-index.html'"></div>
+    <!-- <p>Try scrolling the rest of the page to see this option in action.</p> -->
+  </div>
+</div>
+<hr>
+<div class="m-auto">
+  <span class="fw-light h4">Các nhà đầu tư của chúng tôi</span>
+  <p>
+    <em><small class="text-muted fw-lighter">FPT Polytechnic tự hào có các đối tác và nhà tài trợ tuyệt vời bao gồm:
+    </small></em>
+    
+  </p>
+  <div class="text-center">
+    <a class=" mt-2 btn border-0" 
+        style="max-width: 400px;">
+      <img src="https://fpthcm.com.vn/wp-content/uploads/2021/01/logo-fpt-software.jpg" alt="" 
+          class="img-fluid img-thumbnail shadow rounded-3">
+    </a>
+    <!-- <hr> -->
+</div>
+
+</div>
+<div class="comment-container p-5 bg-light row mt-2">
+  <p class="comment lead fw-bold"
+  style="font-family: monospace;">
+  Tôi thường trì hoãn khi phải học bài để kiểm tra, thậm chí còn chẳng học. Việc sử dụng QuizPoly đã giúp tôi thực sự muốn học, bởi nó đã chứng minh hiệu quả khi giúp tôi chuẩn bị cho bài kiểm tra.  
+</p>
+<p class="text-muted text-center fw-light">Trương Vĩnh Nghi - Sinh viên FPT Polytechnic</p>
+</div>
+    <!-- footer -->
+    <footer ng-include="'./layout/footer.html'" class="row bg-secondary text-white" style="height: 60px;font-family: Verdana, Geneva, Tahoma, sans-serif;"></footer>
+  </div>
+  <!-- <input type="text"> -->
+</body>
+
+</html>

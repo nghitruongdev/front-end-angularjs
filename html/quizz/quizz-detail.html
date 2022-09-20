@@ -1,0 +1,59 @@
+<div class="card-header text-start d-flex justify-content-between">
+    <!-- <div class="">
+      <i class=" h4 bi bi-list-nested"></i>
+      &nbsp;
+      <span class="fw-light h4">{{courseName}}</span>
+    </div> -->
+    <p class="lead text-secondary m-2"><i class="fa-solid fa-book text-secondary"></i> &nbsp;{{courseName}}</p>
+    <div class="col-auto col-lg-2 h5 p-0 m-1 text-end"><span class="badge bg-warning"><i class="fa-solid fa-hourglass-end"></i>
+        &nbsp;{{getTimeText(time);}}</span></div>
+  </div>
+  <!-- d-flex flex-row-reverse -->
+  <div class="progress ">
+    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
+      ng-style="progressStyle" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-secondary bg-opacity-25 progress-bar" role="progressbar"
+      ng-style="unProgressStyle" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="card-body">
+    <div class="h-100 d-flex flex-column justify-content-between" ng-repeat="q in quizzes|limitTo:1:start">
+      <div class="">
+        <h5 class="card-title text-start">{{start + 1}}. {{q.Text}}</h5>
+        <form action="" class="">
+          <ul class="list-group">
+            <li class="list-group-item border border-0 d-flex align-items-center" ng-repeat="ans in q.Answers">
+              <div class="text-start">
+                <input ng-change="changeProgress(q);" ng-disabled="q.isShow == true || time == 0"
+                  class="form-check-input" type="radio" name="{{q.Id}}" id="{{ans.Id}}" value="{{ans.Id}}"
+                  ng-model="q.answer">
+                <label class="form-check-label mx-2 d-inline" for="{{ans.Id}}">
+                  {{ans.Text}}
+                </label>
+              </div>
+              <div class="" ng-if="q.isShow">
+                <span ng-if="q.AnswerId == ans.Id" class="quizz-result"><i
+                    class="bi bi-check2-circle text-success fw-bolder fs-5"></i></span>
+                <span ng-if="q.AnswerId != q.answer && q.answer == ans.Id" class="quizz-result"><i
+                    class="bi bi-x-circle text-danger fw-bolder fs-5"></i></span>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="">
+        <a ng-click="showAnswer(q);" class="text-decoration-none text-info btn btn-outline-light px-3"><i class="fa-solid fa-eye text-info"></i> <span> Hiện đáp án</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center card-footer text-muted text-start">
+    <nav class="pt-2">
+      <ul class="pagination" class="">
+        <li ng-if="start !== 0" ng-click="next(false);" class="page-item"><a class="page-link"><i
+              class="bi bi-arrow-left"></i></a></li>
+        <li ng-if="!(start === quizzes.length - 1)" ng-click="next(true);" class="page-item"><a class="page-link"><i
+              class="bi bi-arrow-right"></i></a></li>
+      </ul>
+    </nav>
+    <button ng-click="finishTest(true);" class="btn btn-primary col-3 py-2"><i
+        class="fa-solid fa-arrow-up-from-bracket"></i> &nbsp;Kết thúc</button>
+  </div>

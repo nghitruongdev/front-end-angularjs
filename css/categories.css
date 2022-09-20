@@ -1,0 +1,13 @@
+.cat-container{
+    min-width: 200px;
+}
+.cat-container .cat-item{
+    max-width: 250px;
+    margin: auto;
+    /* height: 100%; */
+}
+
+.cat-container .cat-item .card-footer{
+    height: 4.5rem;
+    overflow: hidden;
+}

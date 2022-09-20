@@ -1,0 +1,40 @@
+<div class="" ng-include="'others/carousel.html'"></div>
+<h3 class="h3 p-3 fw-light text-muted border-bottom border-top text-center">DANH MỤC MÔN HỌC</h3>
+<div id="courses">
+  <div class="cat-container card-group row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3 ">
+    <div class="col" ng-repeat="course in courses| limitTo:pageSize:start|filter:{Name:searchKeyword}">
+      <a ng-click="" href="#!courses/{{course.Id}}/{{course.Name}}" class="text-decoration-none">
+        <div class="cat-item card shadow h-100 mt-2">
+          <img src="../images/logos/{{course.Logo}}" class="card-img-top" alt="..." style="max-height:350px;">
+          <div class="card-footer text-muted text-center lead"><small class="mx-1">{{course.Name}}</small></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- <nav class="pt-2 d-flex justify-content-center">
+    <ul class="pagination" class="">
+      <li ng-if="!(start < 0)" ng-click="next(false, 12);" class="page-item"><a class="page-link"><i
+            class="bi bi-arrow-left"></i></a></li>
+      <li ng-if="!(start > courses.length - 1)" ng-click="next(true, 12);" class="page-item"><a class="page-link"><i
+            class="bi bi-arrow-right"></i></a></li>
+    </ul>
+</nav> -->
+
+<nav aria-label="..." class="mt-3 pt-2 d-flex justify-content-center">
+  <ul class="pagination">
+    <li class="page-item {{currentPage == 1? 'disabled':''}}">
+      <a class="page-link" ng-click="goToPage(1);"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    <!-- <li class="page-item"><a ng-click="goToPage(1);" class="page-link">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+    <div class="d-flex rounded-0" ng-repeat="page in pages|limitTo:1:(currentPage - 1)">
+      <li class="page-item {{other == currentPage? 'active': ''}}" ng-repeat="other in page"><a ng-click="goToPage(other);" class="page-link">{{other}}</a></li>
+    </div>
+    <li class="page-item {{currentPage == getTotalPage()? 'disabled':''}}">
+      <a class="page-link" ng-click="goToPage(getTotalPage());"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+  </ul>
+</nav>
+
+

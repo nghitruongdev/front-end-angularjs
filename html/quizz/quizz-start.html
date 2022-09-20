@@ -1,0 +1,17 @@
+
+    <form action="" class="h-100 d-flex flex-column">
+        <div class="col-8 m-auto d-flex flex-column justify-content-center">
+            <p class="lead text-center text-muted"><i class="fa-solid fa-book text-secondary"></i> &nbsp;{{courseName}}</p>
+            <div class=" p-0">
+                <select class="form-select " aria-label="Default select example" ng-model="selectedPart" required>
+                    <option selected value="">Vui lòng chọn bài quizz</option>
+                    <option ng-repeat="part in parts" ng-value="part">Part {{$index + 1}}</option>
+                </select>
+            </div>
+            <hr>
+            <div class="text-center ">
+                <button class="btn btn-success w-50 py-2" type="submit" ng-click="startQuizz(selectedPart);">Bắt Đầu</button>
+            </div>
+        </div>
+        <div class="text-center"><img src="../images/quizz-preview.png" alt="" class="img-fluid w-50"></div>
+    </form>

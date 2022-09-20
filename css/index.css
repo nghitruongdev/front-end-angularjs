@@ -1,0 +1,38 @@
+body{
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+#main-nav-bar{
+   
+    font-weight: bold;
+    /* font-size: 14px; */
+}
+
+#main-nav-bar .nav-link{
+    border-bottom: 1px solid white;
+}
+
+#main-nav-bar .nav-link:hover{
+    color: rgb(165, 23, 23);
+    padding-right: 0.75rem;
+    border-bottom: 1px solid rgb(165, 23, 23);
+}
+
+#main-nav-bar .nav-link.active{
+    color: rgb(165, 23, 23);
+    border-bottom: 1px solid rgb(165, 23, 23);
+}
+
+  @media screen and (max-width:767px) {
+    #second-card div{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  p.comment::before{
+    content: url(https://assets.quizlet.com/a/j/dist/app/i/prismic/quotes-open.76da8581ea3adc0.svg);
+  }
+  p.comment::after{
+    content:url(https://assets.quizlet.com/a/j/dist/app/i/prismic/quotes-close.f05dbfc1b568217.svg);
+  }

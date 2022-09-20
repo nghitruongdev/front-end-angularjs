@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/34cc1d8757.js" crossorigin="anonymous"></script>
+  <!-- Css -->
+<style>
+  @media screen and (max-width:767px) {
+    #second-card div{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  p.comment::before{
+    content: url(https://assets.quizlet.com/a/j/dist/app/i/prismic/quotes-open.76da8581ea3adc0.svg);
+  }
+  p.comment::after{
+    content:url(https://assets.quizlet.com/a/j/dist/app/i/prismic/quotes-close.f05dbfc1b568217.svg);
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+
+    <main class="m-auto" style="max-width: 1000px;">
+      <div class="card mb-3 border border-0 m-auto bg-light">
+        <div class="row g-0 ">
+          <div class="col-md-6">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center h-100">
+              <h5 class="card-title h2">Trao tiềm lực vô hạn cho mọi sinh viên</h5>
+              <p class="card-text lead text-justify">
+                Tại FPT Polytechnic, chúng tôi tin rằng bất cứ ai cũng có thể học bất cứ điều gì.
+                Chỉ cần họ có tinh thần kiên trì, được hướng dẫn đúng cách và có các công cụ phù hợp để thành công.
+                Chúng tôi biết rằng sinh viên đang chịu nhiều áp lực hơn bao giờ hết.
+                Điều đó có thể khiến họ quá tải, gây lo âu và bào mòn sức lực nhanh chóng.
+                Nhiệm vụ của chúng tôi là cung cấp cho mọi sinh viên các công cụ và sự tự tin để thành công,
+                bất kể động lực và mục tiêu của họ là gì.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.prismic.io/quizlet-prod/97172bfd-e03b-47b7-85a0-6b12e6227f7d_Template+31.png?auto=compress,format"
+              class="img-fluid rounded-start" alt="...">
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card mb-3 border border-0 m-auto"  id="second-card">
+        <div class="row g-0 ">
+          <div class="col-md-6">
+            <img 
+            src="https://images.prismic.io/quizlet-prod/d620bb37-afee-43a8-a1f7-18696eebe339_Template+32+%282%29.png?auto=compress,format"
+
+              class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center h-100">
+              <h5 class="card-title h2">Bắt đầu từ một chiến thắng</h5>
+              <p class="card-text lead text-justify">
+                Năm 2005, Andrew Sutherland đã tạo ra một công cụ học tập để giúp bản thân vượt qua bài kiểm tra từ vựng. Cậu ấy đã thành công và chia sẻ công cụ này với bạn bè, giúp họ bắt đầu đạt điểm giỏi. Giờ đây, sau hơn một thập kỷ, 50 triệu sinh viên sử dụng FPT Quiz hàng tháng cho mọi bài học, từ kiểm tra toán, kỳ thi y khoa, cho đến các câu đố từ vựng tiếng Anh.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 border border-0 m-auto bg-light" >
+        <div class="row g-0 ">
+          <div class="col-md-6">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center h-100">
+              <h5 class="card-title h2">Được tin dùng bởi  trường đại học uy tín</h5>
+              <p class="card-text lead text-justify">
+                Khởi đầu là một công cụ đơn giản, FPT Quiz đã phát triển thành bảy chế độ học khác nhau, cùng các công cụ giúp giáo viên có được kết quả tốt nhất từ học sinh và các hoạt động giúp cả lớp có thể học tập và vui chơi. Và đó mới chỉ là khởi đầu. Chúng tôi đang nỗ lực khai phóng sự kỳ diệu của việc học một-kèm-một cho từng học sinh, định hình nên tương lai của việc học được cá nhân hóa để giúp hướng dẫn và thúc đẩy mỗi người học.
+              </p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+            src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3R1ZGVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+
+              class="img-fluid rounded-start" alt="...">
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="m-auto">
+        <span class="fw-light h4">Các nhà đầu tư của chúng tôi</span>
+        <p>
+          <em><small class="text-muted fw-lighter">FPT Polytechnic tự hào có các đối tác và nhà tài trợ tuyệt vời bao gồm:
+          </small></em>
+          
+        </p>
+        <div class="text-center">
+          <a href="#" class=" mt-2 btn border-0" 
+              style="max-width: 400px;">
+            <img src="https://fpthcm.com.vn/wp-content/uploads/2021/01/logo-fpt-software.jpg" alt="" 
+                class="img-fluid img-thumbnail shadow rounded-3">
+          </a>
+          <hr>
+      </div>
+  
+      </div> -->
+      <!-- <div class="comment-container p-5 bg-light row mt-2">
+        <p class="comment lead fw-bold"
+        style="font-family: monospace;">
+        Tôi thường trì hoãn khi phải học bài để kiểm tra, thậm chí còn chẳng học. Việc sử dụng QuizPoly đã giúp tôi thực sự muốn học, bởi nó đã chứng minh hiệu quả khi giúp tôi chuẩn bị cho bài kiểm tra.  
+      </p>
+      <p class="text-muted text-center fw-light">Trương Vĩnh Nghi - Sinh viên FPT Polytechnic</p>
+      </div> -->
+    </main>
+ 
+  </div>
+</body>
+</html>

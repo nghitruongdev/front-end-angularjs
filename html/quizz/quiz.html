@@ -1,0 +1,5 @@
+<div class="container py-4 bg-light" style="min-width: 350px;">
+  <div ng-if="screenShow == 'start'" class="h-100 m-auto" ng-include="'./quizz/quizz-start.html'"style="max-width: 800px;"></div>
+  <div ng-if="screenShow == 'result'" ng-include="'./quizz/result-summary.html'" class="" ></div>
+  <div ng-if="screenShow == 'quizz'" ng-include="'./quizz/quizz-detail.html'" class="m-auto card text-center shadow h-100" style="max-width: 800px;"></div>
+</div>
