@@ -1,77 +1,79 @@
-  <div class="container bg-light" >
-    <div class="row pt-3 pb-4">
-      <div class=" col-lg-5 col-md-6 col-8 mx-auto">
-        <div class="card flex-row border-0 shadow rounded-3 overflow-hidden">
-          <!-- <div class="card-img-left d-none d-md-flex img-login">
+<div class="container bg-light">
+  <div class="row pt-3 pb-4">
+    <div class=" col-lg-5 col-md-6 col-8 mx-auto">
+      <div class="card flex-row border-0 shadow rounded-3 overflow-hidden">
+        <!-- <div class="card-img-left d-none d-md-flex img-login">
           </div> -->
-          <div class="card-body mx-4 my-2">
-            <div ng-if="isLoginFail" class="alert alert-danger d-flex align-items-center" role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-octagon-fill flex-grow-0 me-2" viewBox="0 0 16 16">
-                <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
-              <div>
-                {{message? message: 'Username hoặc password không tồn tại.'}}
-              </div>
-              </div>
-            <div class="card-img text-center mb-4">
-              <img class="img-fluid" style="max-width: 100px;"
-               src="https://img5.thuthuatphanmem.vn/uploads/2022/01/16/logo-fpt-fpt-polytechnic-tach-nen_043151201.png" alt="">
-
+        <div class="card-body mx-4 my-2">
+          <div ng-if="isLoginFail" class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+              class="bi bi-exclamation-octagon-fill flex-grow-0 me-2" viewBox="0 0 16 16">
+              <path
+                d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            <div>
+              {{message? message: 'Username hoặc password không tồn tại.'}}
             </div>
-            <h5 class="card-title lead text-muted mb-3 fw-light  ">Welcome Back!</h5>
+          </div>
+          <div class="card-img text-center mb-4">
+            <img class="img-fluid" style="max-width: 100px;"
+              src="https://img5.thuthuatphanmem.vn/uploads/2022/01/16/logo-fpt-fpt-polytechnic-tach-nen_043151201.png"
+              alt="">
 
-            <form name="loginForm" class="needs-validation" novalidate>
+          </div>
+          <h5 class="card-title lead text-muted mb-3 fw-light  ">Welcome Back!</h5>
+
+          <form name="loginForm" class="needs-validation" novalidate>
 
             <div class="form-floating mb-3 has-validation">
-              <input ng-model="username" ng-minlength="3" ng-max-length="20"
-              type="text" name="un" class="form-control is-valid"
-              id="username" placeholder=" " required>
+              <input ng-model="username" ng-minlength="3" ng-max-length="20" type="text" name="un"
+                class="form-control {{(loginForm.un.$untouched && !loginForm.un.$dirty)? '' : loginForm.un.$invalid? 'is-invalid':'is-valid'}}"
+                id="username" placeholder=" " required>
               <label class="text-muted fw-light" for="username">Nhập username</label>
               <div class="invalid-feedback">Nhập username từ 3 đến 20 kí tự.</div>
             </div>
 
             <div class="form-floating mb-3 has-validation">
-              <input ng-model="password" ng-minlength="6" ng-pattern="/^[a-zA-Z0-9-]*$/"
-              type="password" name="pw"
-              class="form-control {{(loginForm.pw.$untouched && !loginForm.pw.$dirty)? '' : loginForm.pw.$invalid? 'is-invalid':'is-valid'}}"
-              id="username" placeholder=" " required>
+              <input ng-model="password" ng-minlength="6" ng-pattern="/^[a-zA-Z0-9-]*$/" type="password" name="pw"
+                class="form-control {{(loginForm.pw.$untouched && !loginForm.pw.$dirty)? '' : loginForm.pw.$invalid? 'is-invalid':'is-valid'}}"
+                id="username" placeholder=" " required>
               <label class="text-muted fw-light" for="username">Nhập password</label>
               <div class="invalid-feedback">Nhập A-z, 0-9, '-' và từ 6 kí tự trở lên.</div>
             </div>
 
 
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" ng-model="isRemember" id="rememberPasswordCheck">
-                <label class="form-check-label fw-light" for="rememberPasswordCheck">
-                  Ghi nhớ mật khẩu
-                </label>
-              </div>
-              <div class="d-grid mb-2">
-                <button ng-click="login();" ng-disabled="loginForm.$invalid"
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" ng-model="isRemember" id="rememberPasswordCheck">
+              <label class="form-check-label fw-light" for="rememberPasswordCheck">
+                Ghi nhớ mật khẩu
+              </label>
+            </div>
+            <div class="d-grid mb-2">
+              <button ng-click="login();" ng-disabled="loginForm.$invalid"
                 class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">đăng nhập</button>
-              </div>
-              <div class=" text-center">
+            </div>
+            <div class=" text-center">
               <!-- <a class=" mt-2 small" href="#!update-password">Quên mật khẩu?</a> -->
               <a href="#!register" class=" small">Chưa có tài khoản?</a>
-              </div>
+            </div>
 
-              <hr class="my-4">
+            <hr class="my-4">
 
-              <div class="d-grid mb-2">
-                <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                  <i class="fab fa-google me-2"></i> Đăng nhập Google
-                </button>
-              </div>
+            <div class="d-grid mb-2">
+              <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                <i class="fab fa-google me-2"></i> Đăng nhập Google
+              </button>
+            </div>
 
-              <div class="d-grid">
-                <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                  <i class="fab fa-facebook-f me-2"></i> Đăng nhập Facebook
-                </button>
-              </div>
+            <div class="d-grid">
+              <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                <i class="fab fa-facebook-f me-2"></i> Đăng nhập Facebook
+              </button>
+            </div>
 
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>
